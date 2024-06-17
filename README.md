@@ -4,13 +4,16 @@
   Built with ❤️  and support of Bedrock
 </p>
 
-* Can be used on any decent hosting-platform, for example at
+
 * clone and adapt any <XXXXX> for your requirements
+* Can be used on any decent hosting-platform, for example at
 
 <p align="center">
   <a href="https://www.hostsharing.net">hostsharing.net</a> |
 </p>
 
+* all config and setup must be adapted to the needs of your project
+* just an example, not a full featured solution, your mileage might vary
 
 ## Documentation
 
