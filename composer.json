@@ -1,0 +1,124 @@
+{
+  "name": "roots/bedrock",
+  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "license": "MIT",
+  "type": "project",
+  "keywords": [
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
+  ],
+  "authors": [
+    {
+      "name": "Scott Walkinshaw",
+      "email": "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    },
+    {
+      "name": "Ben Word",
+      "email": "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    }
+  ],
+  "homepage": "https://roots.io/bedrock/",
+  "support": {
+    "issues": "https://github.com/roots/bedrock/issues",
+    "forum": "https://discourse.roots.io/category/bedrock"
+  },
+  "require": {
+    "php": ">=7.4 <8.0",
+    "amaya/amaya-features": "^1.0",
+    "composer/installers": "2.2.0",
+    "inpsyde/wp-translation-downloader": "2.5",
+    "johnbillion/wp-crontrol": "^1.15",
+    "oscarotero/env": "2.1.0",
+    "roots/bedrock-autoloader": "1.0.4",
+    "roots/bedrock-disallow-indexing": "2.0.0",
+    "roots/wordpress": "6.5.3",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.1.0",
+    "vlucas/phpdotenv": "5.6.0",
+    "wp-cli/wp-cli-bundle": "2.10.0",
+    "wpackagist-plugin/contact-form-7": "^5.8",
+    "wpackagist-plugin/instagram-feed": "^6.2",
+    "wpackagist-plugin/intuitive-custom-post-order": "^3.1",
+    "wpackagist-plugin/kirki": "^5.0",
+    "wpackagist-plugin/limit-login-attempts-reloaded": "2.26.9",
+    "wpackagist-plugin/loco-translate": "2.6.9",
+    "wpackagist-plugin/meta-box": "^5.9",
+    "wpackagist-plugin/newsletter": "8.3.4",
+    "wpackagist-plugin/one-click-demo-import": "^3.2",
+    "wpackagist-plugin/post-duplicator": "2.35",
+    "wpackagist-plugin/real-cookie-banner": "4.7.9",
+    "wpackagist-plugin/use-any-font": "^6.3",
+    "wpackagist-plugin/wordfence": "7.11.5",
+    "wpackagist-theme/twentyseventeen": "3.6"
+  },
+  "require-dev": {
+    "deployer/deployer": "7.4.0",
+    "roave/security-advisories": "dev-latest",
+    "squizlabs/php_codesniffer": "3.10.1"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/pniederlag/wplang"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "inpsyde/wp-translation-downloader": true,
+      "roots/wordpress-core-installer": true
+    },
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.4"
+    },
+    "preferred-install": "dist"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "wpackagist-plugin/kirki",
+        "wpackagist-plugin/meta-box"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "web/wp",
+    "wp-translation-downloader": {
+      "directory": "web/app/languages",
+      "languages": [
+        "en_GB",
+        "de_DE"
+      ]
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}
