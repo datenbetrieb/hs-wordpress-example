@@ -30,7 +30,6 @@
   },
   "require": {
     "php": ">=7.4 <8.0",
-    "amaya/amaya-features": "^1.0",
     "composer/installers": "2.2.0",
     "inpsyde/wp-translation-downloader": "2.5",
     "johnbillion/wp-crontrol": "^1.15",
